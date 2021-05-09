@@ -238,8 +238,8 @@ dsfdsf
 
 <script>
   var video = document.getElementById('video');
-  //var videoSrc = 'https://royal-boat-9bf1.wjncet4.workers.dev/0:/video/ffmpegTest/VID_20210508_194231.m3u8';
-  var videoSrc = 'https://mat0401.info/expfiles/hls/Nature.m3u8';
+  var videoSrc = 'https://royal-boat-9bf1.wjncet4.workers.dev/0:/video/ffmpegTest/VID_20210508_194231.m3u8';
+  //var videoSrc = 'https://mat0401.info/expfiles/hls/Nature.m3u8';
   var config = {
 debug: true,
 xhrSetup: function (xhr,url) {
@@ -255,6 +255,9 @@ xhr.setRequestHeader("Access-Control-Allow-Credentials","true");
     var hls = new Hls(config);
     hls.loadSource(videoSrc);
     hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
   }
   // hls.js is not supported on platforms that do not have Media Source
   // Extensions (MSE) enabled.
