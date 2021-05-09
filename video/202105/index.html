@@ -242,6 +242,11 @@ dsfdsf
   //var videoSrc = 'https://mat0401.info/expfiles/hls/Nature.m3u8';
   var config = {
 debug: true,
+      fetchSetup: function (context, initParams) {
+    // Always send cookies, even for cross-origin calls.
+    initParams.credentials = 'include';
+    return new Request(context.url, initParams);
+  },
 xhrSetup: function (xhr,url) {
 xhr.withCredentials = true; // do send cookie
 xhr.setRequestHeader("Access-Control-Allow-Headers","Content-Type, Accept, X-Requested-With");
@@ -280,25 +285,6 @@ xhr.setRequestHeader("Access-Control-Allow-Credentials","true");
 
         
 
-
-<video id="video22"></video>
-<script>
-  if (Hls.isSupported()) {
-    var video = document.getElementById('video22');
-    var hls = new Hls();
-    // bind them together
-    hls.attachMedia(video);
-    hls.on(Hls.Events.MEDIA_ATTACHED, function () {
-      console.log('video and hls.js are now bound together !');
-      hls.loadSource('https://royal-boat-9bf1.wjncet4.workers.dev/0:/video/ffmpegTest/VID_20210508_194231.m3u8');
-      hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
-        console.log(
-          'manifest loaded, found ' + data.levels.length + ' quality level'
-        );
-      });
-    });
-  }
-</script>
       </div>
       
       
