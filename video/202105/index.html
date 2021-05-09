@@ -21,13 +21,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
 <script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:true,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:true,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;Searching...&quot;,&quot;empty&quot;:&quot;We didn&#39;t find any results for the search: ${query}&quot;,&quot;hits_time&quot;:&quot;${hits} results found in ${time} ms&quot;,&quot;hits&quot;:&quot;${hits} results found&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
+<meta name="description" content="dsfdsf            var video &#x3D; document.getElementById(&#39;video&#39;);   var videoSrc &#x3D; &#39;https:&#x2F;&#x2F;royal-boat-9bf1.wjncet4.workers.dev">
 <meta property="og:type" content="website">
 <meta property="og:title" content="video">
 <meta property="og:url" content="http://example.com/video/202105/index.html">
 <meta property="og:site_name" content="柿ちゃん">
+<meta property="og:description" content="dsfdsf            var video &#x3D; document.getElementById(&#39;video&#39;);   var videoSrc &#x3D; &#39;https:&#x2F;&#x2F;royal-boat-9bf1.wjncet4.workers.dev">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-05T16:07:41.000Z">
-<meta property="article:modified_time" content="2021-05-08T13:50:31.891Z">
+<meta property="article:modified_time" content="2021-05-09T12:29:09.786Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -227,6 +229,38 @@
           width="30%" controlslist="nodownload" controls playsinline="" poster="">
           </video>
 </div>
+
+
+dsfdsf
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <video id="video"></video>
+
+
+<script>
+  var video = document.getElementById('video');
+  var videoSrc = 'https://royal-boat-9bf1.wjncet4.workers.dev/0:/video/ffmpegTest/VID_20210508_194231.m3u8';
+  if (Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+  }
+  // hls.js is not supported on platforms that do not have Media Source
+  // Extensions (MSE) enabled.
+  //
+  // When the browser has built-in HLS support (check using `canPlayType`),
+  // we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video
+  // element through the `src` property. This is using the built-in support
+  // of the plain video element, without using hls.js.
+  //
+  // Note: it would be more normal to wait on the 'canplay' event below however
+  // on Safari (where you are most likely to find built-in HLS support) the
+  // video.src URL must be on the user-driven white-list before a 'canplay'
+  // event will be emitted; the last video event that can be reliably
+  // listened-for when the URL is not on the white-list is 'loadedmetadata'.
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = videoSrc;
+  }
+</script>
 
       </div>
       
