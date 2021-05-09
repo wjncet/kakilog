@@ -22,6 +22,22 @@
       </tags>
   </entry>
   <entry>
+    <title>Chatwootの導入</title>
+    <url>/2021/04/10/2021041001/</url>
+    <content><![CDATA[<p>今日予定はChatwootを導入するんです。前は自分のheroku環境にデプロイし、成功になったことがあります。<br>ただし、懸念事項はメール送信設定が失敗してしまいました。今日は再チャレンジします。</p>
+<span id="more"></span>
+<h1 id="無料SMTPサーバー探し"><a href="#無料SMTPサーバー探し" class="headerlink" title="無料SMTPサーバー探し"></a>無料SMTPサーバー探し</h1><p>最初自分のgmailで設定してみました。結果はダメです。原因が不明ですけど、恐らくgmailのサーバーは普通のと違うかもしれません。<br>インターネットで似たようなクレームがいっぱいですから、時間を無駄しなく、他の無料SMTPサーバーを探してみます。<br>最後は公式サイトでお勧めのSendGridを選びました。</p>
+<h1 id="SendGrid"><a href="#SendGrid" class="headerlink" title="SendGrid"></a>SendGrid</h1><p>1時間苦戦しましたが、送信できるようになりました。次はChatwootに設定してみます。</p>
+<h1 id="Chatwoot"><a href="#Chatwoot" class="headerlink" title="Chatwoot"></a>Chatwoot</h1><p>SendGrid設定後、最初の登録メールは無事に送信されましたが、オフラインの場合、アラートメールが届かなかった。ログから見ると、障害が発生したそうです。バグですか？やばいですね。ソースを調査すれば、非常に時間がかかります。そして無料版と比べて、Github版の機能も若干違うところがあります、特にPush機能が付いていません。Githubのソースは最新ではないでしょうか。もう時間がないですから、とりあえず、無料版を利用して、今後時間があれば、再調査します。そして、代わりに「Rocket.Chat」を使えるかを検討する必要です。</p>
+]]></content>
+      <categories>
+        <category>パパのBlog</category>
+      </categories>
+      <tags>
+        <tag>雑談</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>柿ちゃんへの話</title>
     <url>/2021/04/13/2021041301/</url>
     <content><![CDATA[<h1 id="中文"><a href="#中文" class="headerlink" title="中文"></a>中文</h1><p>小柿子你好，我是爸爸。嗯，还不太习惯。<br>现在你还在妈妈的肚子里，我说的话你还听不到。不过没关系，我先录下来，等3，4年后，你再观看。</p>
@@ -42,22 +58,6 @@
       <tags>
         <tag>雑談</tag>
         <tag>ビデオ付</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Chatwootの導入</title>
-    <url>/2021/04/10/2021041001/</url>
-    <content><![CDATA[<p>今日予定はChatwootを導入するんです。前は自分のheroku環境にデプロイし、成功になったことがあります。<br>ただし、懸念事項はメール送信設定が失敗してしまいました。今日は再チャレンジします。</p>
-<span id="more"></span>
-<h1 id="無料SMTPサーバー探し"><a href="#無料SMTPサーバー探し" class="headerlink" title="無料SMTPサーバー探し"></a>無料SMTPサーバー探し</h1><p>最初自分のgmailで設定してみました。結果はダメです。原因が不明ですけど、恐らくgmailのサーバーは普通のと違うかもしれません。<br>インターネットで似たようなクレームがいっぱいですから、時間を無駄しなく、他の無料SMTPサーバーを探してみます。<br>最後は公式サイトでお勧めのSendGridを選びました。</p>
-<h1 id="SendGrid"><a href="#SendGrid" class="headerlink" title="SendGrid"></a>SendGrid</h1><p>1時間苦戦しましたが、送信できるようになりました。次はChatwootに設定してみます。</p>
-<h1 id="Chatwoot"><a href="#Chatwoot" class="headerlink" title="Chatwoot"></a>Chatwoot</h1><p>SendGrid設定後、最初の登録メールは無事に送信されましたが、オフラインの場合、アラートメールが届かなかった。ログから見ると、障害が発生したそうです。バグですか？やばいですね。ソースを調査すれば、非常に時間がかかります。そして無料版と比べて、Github版の機能も若干違うところがあります、特にPush機能が付いていません。Githubのソースは最新ではないでしょうか。もう時間がないですから、とりあえず、無料版を利用して、今後時間があれば、再調査します。そして、代わりに「Rocket.Chat」を使えるかを検討する必要です。</p>
-]]></content>
-      <categories>
-        <category>パパのBlog</category>
-      </categories>
-      <tags>
-        <tag>雑談</tag>
       </tags>
   </entry>
 </search>
