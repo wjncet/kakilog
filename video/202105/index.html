@@ -230,15 +230,16 @@ debug: true,
       fetchSetup: function (context, initParams) {
     // Always send cookies, even for cross-origin calls.
     initParams.credentials = 'include';
+           
     return new Request(context.url, initParams);
-  },
-xhrSetup: function (xhr,url) {
-xhr.withCredentials = true; // do send cookie
+  }
+//xhrSetup: function (xhr,url) {
+//xhr.withCredentials = true; // do send cookie
 //xhr.setRequestHeader("Access-Control-Allow-Headers","Content-Type, Accept, X-Requested-With");
-    xhr.setRequestHeader('Access-Control-Allow-Origin','*');
-xhr.setRequestHeader("Access-Control-Allow-Credentials","true");
+ //   xhr.setRequestHeader('Access-Control-Allow-Origin','*');
+//xhr.setRequestHeader("Access-Control-Allow-Credentials","true");
  // xhr.setRequestHeader("Access-Control-Allow-Methods","get");
-}
+//}
 };
 
   if (Hls.isSupported()) {
