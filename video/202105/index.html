@@ -218,72 +218,10 @@
 
 dsfdsf
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <video id="video"></video>
-
-
-<script>
-  var video = document.getElementById('video');
-  var videoSrc = 'https://wandering-resonance-7318.wjncet4.workers.dev/0:/video/ffmpegTest/VID_20210508_194231.m3u8';
- // var videoSrc = 'https://proud-pond-bb8d.wjncet4.workers.dev';
-  var config = {
-debug: true,
-    /*
-      fetchSetup: function (context, initParams) {
-    // Always send cookies, even for cross-origin calls.
-    initParams.credentials = 'include';
-           
-    return new Request(context.url, initParams);
-  }*/
-xhrSetup: function (xhr,url) {
-xhr.withCredentials = true; // do send cookie
-xhr.setRequestHeader("Access-Control-Allow-Headers","Content-Type, Accept, X-Requested-With");
-  xhr.setRequestHeader("Access-Control-Allow-Origin","https://kakilog.herokuapp.com");
-//    xhr.setRequestHeader("Access-Control-Allow-Origin","https://royal-boat-9bf1.wjncet4.workers.dev/0:");
-xhr.setRequestHeader("Access-Control-Allow-Credentials","true");
-}
-};
-
-  if (Hls.isSupported()) {
-    console.log('Hls.isSupported OKOKOKOKO');
-    var hls = new Hls(config);
-    hls.loadSource(videoSrc);
-    hls.attachMedia(video);
-    //    hls.on(Hls.Events.MANIFEST_PARSED,function() {
-    // video.play();
-  //});
-  }
-  // hls.js is not supported on platforms that do not have Media Source
-  // Extensions (MSE) enabled.
-  //
-  // When the browser has built-in HLS support (check using `canPlayType`),
-  // we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video
-  // element through the `src` property. This is using the built-in support
-  // of the plain video element, without using hls.js.
-  //
-  // Note: it would be more normal to wait on the 'canplay' event below however
-  // on Safari (where you are most likely to find built-in HLS support) the
-  // video.src URL must be on the user-driven white-list before a 'canplay'
-  // event will be emitted; the last video event that can be reliably
-  // listened-for when the URL is not on the white-list is 'loadedmetadata'.
-  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        console.log('Hls.isNOTSupported NGNGNGNNGNGNNG');
-    video.src = videoSrc;
-  }
-</script>
+ 
 
         
-
-      </div>
       
-      
-      
-    </div>
-  <ul class="breadcrumb">
-            <li><a href="/video/">VIDEO</a></li>
-          <li>202105</li>
-        
-  </ul>
-
      <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
          <video-js id=example-video width=1280 height=720
               class="vjs-default-skin" controls>
@@ -296,6 +234,19 @@ xhr.setRequestHeader("Access-Control-Allow-Credentials","true");
       var player = videojs('example-video');
     </script>
       
+      
+
+      </div>
+      
+      
+      
+    </div>
+  <ul class="breadcrumb">
+            <li><a href="/video/">VIDEO</a></li>
+          <li>202105</li>
+        
+  </ul>
+
     
 
 <script src="/js/comments.js"></script>
