@@ -217,8 +217,10 @@
           
  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
  
+        <video id="video" controls style="width:100%;height:600px;"></video>
+        
 <script>
-    //  var video = document.getElementById('video');
+      var video = document.getElementById('video');
       var videoSrc ='https://wandering-resonance-7318.wjncet4.workers.dev/0:/video/20210514/1/SVID_202105141.m3u8';
   if (Hls.isSupported()) {
   var config = {
@@ -233,6 +235,10 @@
   var hls = new Hls(config);
     // bind them together
     hls.loadSource(videoSrc);
+         hls.attachMedia(video);
+	  hls.on(Hls.Events.MANIFEST_PARSED,function() {
+            video.play();
+      });
 </script>
 
  <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
