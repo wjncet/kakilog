@@ -216,19 +216,22 @@
       <div class="post-body">
           
 由于本视频放在免费网盘上，性能不好，如果视频没显示 请刷新
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
-    <video-js id=example-video1
-              class=" vjs-default-skin" controls>
-      <source
-         src='https://wandering-resonance-7318.wjncet4.workers.dev/0:/video/20210514/1/1620943828069.m3u8'
-         type="application/x-mpegURL">
-    </video-js>
-
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
  
 
-
-<script src="https://vjs.zencdn.net/7.4.1/video.js"></script>
+        
+      
+     <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
+         <video-js id=example-video width=1280 height=720
+              class="vjs-default-skin" controls>
+      <source
+         src='https://wandering-resonance-7318.wjncet4.workers.dev/0:/video/ffmpegTest/VID_20210508_194231.m3u8'
+         type="application/x-mpegURL">
+    </video-js>
+    <script src="https://vjs.zencdn.net/7.4.1/video.js"></script>
+    <script>
+      var player = videojs('example-video');
+    </script>
 
       </div>
       
