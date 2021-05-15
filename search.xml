@@ -1,42 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>柿ちゃん、来た！！</title>
-    <url>/2021/05/13/2021051301/</url>
-    <content><![CDATA[<p>来た来た。2021年5月13日17時59分に柿ちゃんが生まれました。<br>ご誕生おめでとうございます！</p>
-<p>来了来了。在2021年5月13日17时59分小柿子出生了。<br>欢迎来到这个世界！</p>
-<p>接下来要干的事儿<br>1，洗玩具<br>2，洗家里衣物，打扫家里卫生<br>3，学习安全椅怎么用</p>
-<p>另外，由于没有好的网盘，为了让国内能访问google网盘而搭建的服务器依旧不稳定。似乎成了鸡肋。。。hls跨域问题时而好用时而不好用。。。</p>
-]]></content>
-      <categories>
-        <category>パパのBlog</category>
-      </categories>
-      <tags>
-        <tag>雑談</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>個人サイト構築成功</title>
-    <url>/2021/04/09/2021040901/</url>
-    <content><![CDATA[<p>やっと個人サイトが作りました。<br>静的なwebサイトですけど、なんとなく嬉しいです。<br>最初はWordPressで動的なwebサイトを作りたかったが、そうなると、AWS、herokuのようなクラウドが必要です。<br>貧乏人ですから、無料デプロイ先が欲しいです。それで、いろいろ苦戦していました。</p>
-<span id="more"></span>
-<h1 id="動的なwebサイトをチャレンジ"><a href="#動的なwebサイトをチャレンジ" class="headerlink" title="動的なwebサイトをチャレンジ"></a>動的なwebサイトをチャレンジ</h1><p>プログラムをデプロイする通常方法は２つがあります。<br>１、プログラムをそのままデプロイします。<br>２，Dockerのイメージにプログラムを入れて、デプロイします。<br>Dockerが知らないので、先に方法１をめぐって調査します。</p>
-<h2 id="heroku"><a href="#heroku" class="headerlink" title="heroku"></a>heroku</h2><p>まず試したのはherokuです。<br>私にとって一番よく知っているクラウドはherokuです。そして、無料プランの期間が無制限、制限があるところはdynoとDB容量です。<br>今回の仕様は一番シンプルなサイトで十分ですので、デプロイできれば、一番楽だと思います。<br>公式サイトを読んで、1時間の乱暴な操作で意外にデプロイしました。とても嬉しいです。<br>「難しいではないですね。もしくは私がやっぱり一般人じゃない」と独り言をしました。<br>結果、調子を乗り過ぎました。。。。。<br>デプロイが確かに成功しましたが、長時間操作すると、変なエラーが出てきました。<br>WordPressが使っているDBはMySqlです。herokuのMySqlプラグインを提供している会社は他の会社で、heroku会社ではありません。それで、無料プランの容量が少ないし、制限が多いし、変なエラーが出てきたことは当然です。<br>「じゃ、MySqlを使わなく、PostgreSQLに変更して可能ですか」という考え方で続いて調査してました。<br>※PostgreSQLはheroku会社が提供しているものです。無料プランであっても、そんな厳しくないです。<br>5時間が経った後、諦めました。WordPressの開発言語がPHPですが、僕は全く分かりません。そして、<br>インターネットで他の人が同じ希望もあって、やってみた結果は大部失敗しました。<br>方法２を試します。herokuはDockerのイメージを支えるけど、ファイル格納のような機能がついていません。Dockerの場合、dataが永続化のため、その機能がなければ使えまえん。結果、またMySqlプラグインを利用する必要があります。<br>herokを諦めて他の無料クラウドサービスを探します。</p>
-<h2 id="AWS、AZURE"><a href="#AWS、AZURE" class="headerlink" title="AWS、AZURE"></a>AWS、AZURE</h2><p>業界に一番有名なクラウドはAWS、Azureですね。でも、欠点が同じく。<br>無料期間は１年しかないです。「１年後、どうしよう」と悩んでいます。諦めました。</p>
-<h2 id="Oracle-Cloud"><a href="#Oracle-Cloud" class="headerlink" title="Oracle Cloud"></a>Oracle Cloud</h2><p>一瞬でOracleが頭に浮かびました。「いえ、無理です。これはオープンソース文化の敵です。無料はありえない。」<br>確認しましたが、やっぱり重要なサービスは有料です。諦めました。</p>
-<h2 id="IBM-Cloud"><a href="#IBM-Cloud" class="headerlink" title="IBM Cloud"></a>IBM Cloud</h2><p>「もしオラクルはオープンソース文化の敵であれば、オープンソース文化の仲間は誰？」勿論IBMです。<br>探したところ、IBM Cloudは永遠無料プランがあります。慈善家ですね。予想通りですね。<br>５時間ぐらい試しましたが、悔しいですけど、諦めました。理由はドキュメントを理解しにくいです。それに、IBM Cloudは大幅に更新されることがあるので、コマンドが紛らわしく、他の人が作ったサンプルはほぼ古くなりました。非常に難航します。</p>
-<h1 id="静的なwebサイトを着手"><a href="#静的なwebサイトを着手" class="headerlink" title="静的なwebサイトを着手"></a>静的なwebサイトを着手</h1><p>冷静に考えて、いままでの問題は構築したいサイトが動的です。逆に静的なサイトはいかがでしょうか。<br>布団中に慎重に探しましたが、HEXOを選択しました。メリットとデメリットはわかりませんが、単なる勘です。。（本当に慎重？）<br>１時間試しましたが、私の勘は正確であることを証明しました。使いやすいだけではなく、中国語のドキュメントもあります。そして、テーマも自由に使えます。（私は「fluid」テーマを採用しています）</p>
-<p>最後、Githubにうっかりしてデプロイしました。最初の考えと違いますけど、とりあえず、適当にごまかします。</p>
-<p>今後の作業はChatwootをサイトに導入し、オンラインチャットを実現するんです。</p>
-]]></content>
-      <categories>
-        <category>パパのBlog</category>
-      </categories>
-      <tags>
-        <tag>雑談</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Chatwootの導入</title>
     <url>/2021/04/10/2021041001/</url>
     <content><![CDATA[<p>今日予定はChatwootを導入するんです。前は自分のheroku環境にデプロイし、成功になったことがあります。<br>ただし、懸念事項はメール送信設定が失敗してしまいました。今日は再チャレンジします。</p>
@@ -61,25 +25,27 @@
 <h1 id="日本語"><a href="#日本語" class="headerlink" title="日本語"></a>日本語</h1><p>柿ちゃん、こんにちは、パパだよ。まだ、慣れていないね。<br>今柿ちゃんはママのお腹にいるので、パパの話しは全然聞こえない。でも、大丈夫だよ。先に録音して、３，４年後見せるね。<br>まずこのサイトを構築する理由を説明する。本来自分のためにサイトを作りたかったが、最近コロナ禍で以前よりも家にいる時間が増えていて、特に週末はうろうろしていることも多くなった。それで、ウェブサイトを作ってもいいかなと思う。でも、柿ちゃんはそろそろ生まれて、パパは何も用意していないから、今回作ったウェブサイトは柿ちゃん生い立ちの記の格納先として、柿ちゃんにあげる。使っているサーバは全部無料だ。御免。。＾-＾<br>次は最近の状況を教える。最近、パパママは嬉しくもあり、苦しくもある。嬉しいのは柿ちゃんが来ることだ。苦しいのは毎日柿ちゃんがママのお腹を物凄く元気に蹴っていることだ。柿ちゃんが楽しんでいるけど、ママがとても苦しいんだ。それで、ママは毎晩眠れなくなって、私たちの生活リズムが崩れてしまった。でも、大丈夫だよ。この苦しいことは全部メモしてあり、いずれか返す。ちなみに、そもそも柿ちゃんのおもちゃを買うために、お金を用意した。でも、罰として、ママは一部のお金を横領し、パソコンを買った。ママが欲しいから、泣き寝入りした方がいい、ご愁傷様。＾-＾<br>最後は柿ちゃんに期待することを語る。先ほど、「苦しいことはいずれか返す」って言った。じゃ、どこで返すことができるかな、勿論学習だ。今の時代は高学歴を持たなければ行けない。高学歴を目指して、学習計画をきちんと立てるつもりだ。それに今月下旬にドラゴン桜2が放送スタートされる。物語は皆さんが東大を目指して、頑張っていることだ。いいドラマだと思う。生まれたあと、是非見てください。<br>もう一つ、このブログを使うか使わないか、まだ決まっていない。いい無料APPがあれば、無料APPを使う。実はYouTubeがいいものだが、何らかの理由で国内の人はアクセスできない、おばあちゃん、おじいちゃんは柿の姿は見れない。それで、ママは他のAPPを探しているんだ。どうしてもできないなら、このブログを使う。</p>
 <h1 id="ビデオ"><a href="#ビデオ" class="headerlink" title="ビデオ"></a>ビデオ</h1>
 <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
-<!--
+
 <div class="post-body animated fadeInDown">
-          <video src="https://wandering-resonance-7318.wjncet4.workers.dev/0:/video/20210503/forkaki_input.mp4" preload="metadata" 
+          <video src="https://wandering-resonance-7318.wjncet4.workers.dev/0:/video/20210503/forkaki_input.mp4" preload="auto" 
           width="70%" controlslist="nodownload" controls playsinline="" poster="">
           </video>
-</div>-->
-
+</div>-
+<!--
 <video
     id="my-video3"
     class="video-js vjs-default-skin vjs-big-play-centered vjs-16-9"
     controls
     preload="metadata"
+    width="70%"
+    controlslist="nodownload" 
     data-setup="{}"
   >
  <source src="https://wandering-resonance-7318.wjncet4.workers.dev/0:/video/20210503/forkaki_input.mp4" type="application/x-mpegURL" />
             
   </video>
 
- <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+ <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>-->
 
 ]]></content>
       <categories>
@@ -88,6 +54,42 @@
       <tags>
         <tag>雑談</tag>
         <tag>ビデオ付</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>個人サイト構築成功</title>
+    <url>/2021/04/09/2021040901/</url>
+    <content><![CDATA[<p>やっと個人サイトが作りました。<br>静的なwebサイトですけど、なんとなく嬉しいです。<br>最初はWordPressで動的なwebサイトを作りたかったが、そうなると、AWS、herokuのようなクラウドが必要です。<br>貧乏人ですから、無料デプロイ先が欲しいです。それで、いろいろ苦戦していました。</p>
+<span id="more"></span>
+<h1 id="動的なwebサイトをチャレンジ"><a href="#動的なwebサイトをチャレンジ" class="headerlink" title="動的なwebサイトをチャレンジ"></a>動的なwebサイトをチャレンジ</h1><p>プログラムをデプロイする通常方法は２つがあります。<br>１、プログラムをそのままデプロイします。<br>２，Dockerのイメージにプログラムを入れて、デプロイします。<br>Dockerが知らないので、先に方法１をめぐって調査します。</p>
+<h2 id="heroku"><a href="#heroku" class="headerlink" title="heroku"></a>heroku</h2><p>まず試したのはherokuです。<br>私にとって一番よく知っているクラウドはherokuです。そして、無料プランの期間が無制限、制限があるところはdynoとDB容量です。<br>今回の仕様は一番シンプルなサイトで十分ですので、デプロイできれば、一番楽だと思います。<br>公式サイトを読んで、1時間の乱暴な操作で意外にデプロイしました。とても嬉しいです。<br>「難しいではないですね。もしくは私がやっぱり一般人じゃない」と独り言をしました。<br>結果、調子を乗り過ぎました。。。。。<br>デプロイが確かに成功しましたが、長時間操作すると、変なエラーが出てきました。<br>WordPressが使っているDBはMySqlです。herokuのMySqlプラグインを提供している会社は他の会社で、heroku会社ではありません。それで、無料プランの容量が少ないし、制限が多いし、変なエラーが出てきたことは当然です。<br>「じゃ、MySqlを使わなく、PostgreSQLに変更して可能ですか」という考え方で続いて調査してました。<br>※PostgreSQLはheroku会社が提供しているものです。無料プランであっても、そんな厳しくないです。<br>5時間が経った後、諦めました。WordPressの開発言語がPHPですが、僕は全く分かりません。そして、<br>インターネットで他の人が同じ希望もあって、やってみた結果は大部失敗しました。<br>方法２を試します。herokuはDockerのイメージを支えるけど、ファイル格納のような機能がついていません。Dockerの場合、dataが永続化のため、その機能がなければ使えまえん。結果、またMySqlプラグインを利用する必要があります。<br>herokを諦めて他の無料クラウドサービスを探します。</p>
+<h2 id="AWS、AZURE"><a href="#AWS、AZURE" class="headerlink" title="AWS、AZURE"></a>AWS、AZURE</h2><p>業界に一番有名なクラウドはAWS、Azureですね。でも、欠点が同じく。<br>無料期間は１年しかないです。「１年後、どうしよう」と悩んでいます。諦めました。</p>
+<h2 id="Oracle-Cloud"><a href="#Oracle-Cloud" class="headerlink" title="Oracle Cloud"></a>Oracle Cloud</h2><p>一瞬でOracleが頭に浮かびました。「いえ、無理です。これはオープンソース文化の敵です。無料はありえない。」<br>確認しましたが、やっぱり重要なサービスは有料です。諦めました。</p>
+<h2 id="IBM-Cloud"><a href="#IBM-Cloud" class="headerlink" title="IBM Cloud"></a>IBM Cloud</h2><p>「もしオラクルはオープンソース文化の敵であれば、オープンソース文化の仲間は誰？」勿論IBMです。<br>探したところ、IBM Cloudは永遠無料プランがあります。慈善家ですね。予想通りですね。<br>５時間ぐらい試しましたが、悔しいですけど、諦めました。理由はドキュメントを理解しにくいです。それに、IBM Cloudは大幅に更新されることがあるので、コマンドが紛らわしく、他の人が作ったサンプルはほぼ古くなりました。非常に難航します。</p>
+<h1 id="静的なwebサイトを着手"><a href="#静的なwebサイトを着手" class="headerlink" title="静的なwebサイトを着手"></a>静的なwebサイトを着手</h1><p>冷静に考えて、いままでの問題は構築したいサイトが動的です。逆に静的なサイトはいかがでしょうか。<br>布団中に慎重に探しましたが、HEXOを選択しました。メリットとデメリットはわかりませんが、単なる勘です。。（本当に慎重？）<br>１時間試しましたが、私の勘は正確であることを証明しました。使いやすいだけではなく、中国語のドキュメントもあります。そして、テーマも自由に使えます。（私は「fluid」テーマを採用しています）</p>
+<p>最後、Githubにうっかりしてデプロイしました。最初の考えと違いますけど、とりあえず、適当にごまかします。</p>
+<p>今後の作業はChatwootをサイトに導入し、オンラインチャットを実現するんです。</p>
+]]></content>
+      <categories>
+        <category>パパのBlog</category>
+      </categories>
+      <tags>
+        <tag>雑談</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>柿ちゃん、来た！！</title>
+    <url>/2021/05/13/2021051301/</url>
+    <content><![CDATA[<p>来た来た。2021年5月13日17時59分に柿ちゃんが生まれました。<br>ご誕生おめでとうございます！</p>
+<p>来了来了。在2021年5月13日17时59分小柿子出生了。<br>欢迎来到这个世界！</p>
+<p>接下来要干的事儿<br>1，洗玩具<br>2，洗家里衣物，打扫家里卫生<br>3，学习安全椅怎么用</p>
+<p>另外，由于没有好的网盘，为了让国内能访问google网盘而搭建的服务器依旧不稳定。似乎成了鸡肋。。。hls跨域问题时而好用时而不好用。。。</p>
+]]></content>
+      <categories>
+        <category>パパのBlog</category>
+      </categories>
+      <tags>
+        <tag>雑談</tag>
       </tags>
   </entry>
 </search>
